@@ -22,10 +22,10 @@ env/
 *.ipynb
 
 # SQLite DBs
-db/*.db
+- db/*.db
 
 # Data files
-data/*.csv
+- data/*.csv
 
 # Logs
 *.log
