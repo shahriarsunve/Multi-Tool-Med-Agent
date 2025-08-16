@@ -1,33 +1,5 @@
 ---
 
-## 📂 Project Structure
-
-multi_tool_med_agent/
-├─ agent/ # Agent router logic
-│ └─ router.py
-├─ tools/ # Tool implementations
-│ ├─ base.py
-│ ├─ db_tool.py
-│ └─ web_tool.py
-├─ scripts/ # Utility scripts
-│ ├─ download_kaggle.py # Downloads datasets from Kaggle
-│ └─ build_sqlite.py # Builds SQLite DBs from CSVs
-├─ data/ # Raw datasets (included for assignment)
-│ ├─ heart.csv
-│ ├─ cancer.csv
-│ └─ diabetes.csv
-├─ db/ # SQLite databases (included for assignment)
-│ ├─ heart_disease.db
-│ ├─ cancer.db
-│ └─ diabetes.db
-├─ main.py # CLI entry point
-├─ requirements.txt
-├─ .env.example
-├─ .gitignore
-└─ README.md
-
----
-
 ## ⚙️ Setup Instructions
 
 ### 1. Clone Repo
