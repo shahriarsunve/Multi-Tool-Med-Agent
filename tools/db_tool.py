@@ -26,13 +26,16 @@ class SQLiteQueryTool(Tool):
             if "=" in frag:
                 col, val = frag.split("=", 1)
                 col = col.strip().replace(" ", "_").lower()
-                val = val.strip()
+                # strip existing quotes if user included them
+                val = val.strip().strip("'\"")
+                # if numeric, keep raw, else wrap in single quotes
                 if val.replace(".", "", 1).isdigit():
                     cond = f"{col} = {val}"
                 else:
                     cond = f"{col} = '{val}'"
         table = self.table_hint or "main_table"
         return f"SELECT * FROM {table} WHERE {cond} LIMIT 25;"
+
 
     def run(self, query: str, **kwargs) -> Dict[str, Any]:
         sql = kwargs.get("sql") or self._sql_from_question(query)
